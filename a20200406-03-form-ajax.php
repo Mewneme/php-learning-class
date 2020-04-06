@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="" name="form1" onsubmit="return mySubmit()">
-    <input type="number" id="a"> + <input type="number" id="b"> = 
+    <input type="number" id="a"> + <input type="number" id="b"> <button>=</button> 
     <input type="text" id="c" disabled="disabled">
     </form>
     <script src="../js/jquery-3.4.1.js"></script>
