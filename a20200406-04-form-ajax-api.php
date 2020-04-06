@@ -8,6 +8,6 @@ $output = [
     'c' => $a+$b,
 ];
 
-echo json_encode($output)
+echo json_encode($output);
 
 ?>
