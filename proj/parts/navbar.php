@@ -19,21 +19,26 @@ if(! isset($page_name)){
                 <li class="nav-item <?= $page_name=='data-insert' ? 'active' : '' ?>">
                     <a class="nav-link" href="data-insert.php">新增資料</a>
                 </li>
-                <li class="nav-item <?= $page_name=='data-insert2' ? 'active' : '' ?>">
-                    <a class="nav-link" href="data-insert2.php">新增資料 2 ajax</a>
-                </li>
-                <li class="nav-item <?= $page_name=='data-list2' ? 'active' : '' ?>">
-                    <a class="nav-link" href="data-list2.php">資料列表 ajax</a>
-                </li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item <?= $page_name=='login' ? 'active' : '' ?>">
-                    <a class="nav-link" href="login.php">登入</a>
-                </li>
-                <li class="nav-item <?= $page_name=='data-insert' ? 'active' : '' ?>">
-                    <a class="nav-link" href="register.php">註冊</a>
-                </li>
-
+                <?php if(isset($_SESSION['loginUser'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link"><?= $_SESSION['loginUser']['nickname'] ?></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">修改會員資料</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">登出</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item <?= $page_name=='login' ? 'active' : '' ?>">
+                        <a class="nav-link" href="login.php">登入</a>
+                    </li>
+                    <li class="nav-item <?= $page_name=='data-insert' ? 'active' : '' ?>">
+                        <a class="nav-link" href="register.php">註冊</a>
+                    </li>
+                <?php endif;  ?>
             </ul>
         </div>
     </div>

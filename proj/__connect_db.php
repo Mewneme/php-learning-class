@@ -19,6 +19,7 @@ try{
 }catch(PDOException $ex){
     echo 'EX:'.$ex -> getMessage();
 }
-
-
+if(! isset($_SESSION)){
+    session_start();
+}
 
